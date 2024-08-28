@@ -37,3 +37,35 @@ body{
     perspective: 500px;
     
 }
+
+
+#heading{
+    font-family: 'New Amsterdam', monospace;
+    font-size: 42px;
+}
+
+#reset_button{
+    font-size: 28px;
+    font-family: 'New Amsterdam', monospace;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+#reset_button:hover{
+    transform: scale(1.02);
+}
+
+.item{
+    position: relative;
+    background-color: slategray;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px;
+    height: 80px;
+    width: 80px;
+    transform: rotateY(180deg);
+    transition: 0.3s;
+}
