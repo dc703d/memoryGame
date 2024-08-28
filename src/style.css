@@ -69,4 +69,31 @@ body {
   transition: 0.3s;
 }
 
+.item.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: slategray;
+  transition: 0.3s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+}
+
+.boxOpen::after {
+  transform: rotateY(180deg);
+}
+
+.boxMatch {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#movesHeading {
+  font-family: "New Amsterdam", monospace;
+}
+
 /*# sourceMappingURL=style.css.map */
