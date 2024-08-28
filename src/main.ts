@@ -39,7 +39,7 @@ for (let i = 0; i < shuffledSymbols.length; i++){
       if (document.querySelectorAll('.boxMatch').length == shuffledSymbols.length) {
         alert('You win!')
       }
-    },500)
+    },1000)
   }
 }
 
