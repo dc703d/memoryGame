@@ -1,3 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: rgb(70, 130, 180);
+}
+
+#gameContainer {
+  background-color: rgb(115, 146, 175);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+  border: 3px solid black;
+}
+
+.cardGrid {
+  height: 350px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
 
 /*# sourceMappingURL=style.css.map */
