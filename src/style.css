@@ -24,8 +24,8 @@ body {
 }
 
 .cardGrid {
-  height: 350px;
-  width: 700px;
+  height: 300px;
+  width: 750px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 1fr);
