@@ -1,0 +1,71 @@
+@use './devices.scss';
+@use './media.scss';
+
+@include media.phone {
+    .cardGrid {
+        width: 80%;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(6,1fr);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#gameContainer{
+    @include media.tablet{
+        #heading{
+            // font-size: 70px;
+        }
+        #movesHeading{
+            // font-size: 40px;
+        }
+        #reset_button{
+            // font-size: 40px;
+        }
+        .cardGrid {
+            width: 100%;
+        }
+        .item{
+            // width: 100px;
+            // height: 100px;
+            // font-size: 50px;
+        }  
+    }
+
+    @include media.desktop{
+        #heading{
+            font-size: 70px;
+        }
+        #movesHeading{
+            font-size: 40px;
+        }
+        #reset_button{
+            font-size: 40px;
+        }
+        .cardGrid {
+            width: 100%;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+        }  
+    }
+
+    @include media.large-screen{
+        #heading{
+            font-size: 80px;
+        }
+        #movesHeading{
+            font-size: 50px;
+        }
+        #reset_button{
+            font-size: 50px;
+        }
+        .item{
+            width: 120px;
+            height: 120px;
+            font-size: 60px;
+        }  
+    }
+}
