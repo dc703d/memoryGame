@@ -1,15 +1,46 @@
-@media screen and (max-width: 425px) {
-  .cardGrid {
-    width: 80%;
+@media screen and (max-width: 375px) {
+  #gameContainer {
+    gap: 0px;
+    max-height: 85vh;
+    max-width: 70%;
+  }
+  #gameContainer .cardGrid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    justify-content: center;
-    align-items: center;
+  }
+  #gameContainer .item {
+    width: 30px;
+    height: 30px;
+  }
+  #gameContainer #heading {
+    font-size: 32px;
+  }
+  #gameContainer #reset_button {
+    font-size: 22px;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 376px) and (max-width: 560px) {
+  #gameContainer {
+    max-height: 85vh;
+    max-width: 70%;
+  }
   #gameContainer .cardGrid {
-    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  #gameContainer .item {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (min-width: 561px) and (max-width: 850px) {
+  #gameContainer .cardGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  #gameContainer .item {
+    width: 70px;
+    height: 70px;
   }
 }
 @media screen and (min-width: 1441px) and (max-width: 2560px) {

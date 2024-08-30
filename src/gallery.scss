@@ -1,35 +1,52 @@
 @use './devices.scss';
 @use './media.scss';
 
-@include media.phone {
-    .cardGrid {
-        width: 80%;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(6,1fr);
-        justify-content: center;
-        align-items: center;
-    }
-}
 
 #gameContainer{
-    @include media.tablet{
-        #heading{
-            // font-size: 70px;
-        }
-        #movesHeading{
-            // font-size: 40px;
-        }
-        #reset_button{
-            // font-size: 40px;
-        }
-        .cardGrid {
-            width: 100%;
+
+    @include media.small-phone{
+        gap: 0px;
+        max-height: 85vh;
+        max-width: 70%;
+        .cardGrid{
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(6,1fr);
         }
         .item{
-            // width: 100px;
-            // height: 100px;
-            // font-size: 50px;
+            width: 30px;
+            height: 30px;
+        }
+        #heading{
+            font-size: 32px;
+        }
+        #reset_button{
+            font-size: 22px;
+        }
+    }
+
+    @include media.med-phone{
+        max-height: 85vh;
+        max-width: 70%;
+        .cardGrid{
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(6,1fr);
+        }
+        .item{
+            width: 50px;
+            height: 50px;
         }  
+    }
+
+    @include media.large-phone{
+        .cardGrid{
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+        .item{
+            width: 70px;
+            height: 70px;
+        }
+        
     }
 
     @include media.desktop{

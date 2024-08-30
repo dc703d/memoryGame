@@ -1,11 +1,18 @@
-$xs: 425px; // Extra small
-$sm: 768px; // Small
-$md: 1024px; // Medium
+$xxs: 375px; // Extra Extra Small
+$xs: 560px; // Extra small
+$sm: 850px; // Small
+$md: 1060px; // Medium
 $lg: 1440px; // Large
 $xl: 2560px; // Extra Large
 
-@mixin phone {
-    @media screen and (max-width: ($xs)) {
+@mixin small-phone {
+    @media screen and (max-width: ($xxs)) {
+        @content;
+    }
+}
+
+@mixin med-phone {
+    @media screen and (min-width: ($xxs+1)) and (max-width: ($xs)) {
         @content;
     }
 }
