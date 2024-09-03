@@ -163,6 +163,7 @@ body {
   border-radius: 10px;
   border: 2px solid whitesmoke;
   background-color: transparent;
+  justify-self: center;
   position: absolute;
   top: 50px;
   right: 100px;
