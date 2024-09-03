@@ -10,13 +10,15 @@ body{
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
-    background-color:rgb(70, 130, 180);
+    background-color:rgb(52, 46, 46);
 }
 
 #gameContainer{
-    background-color:rgb(115, 146, 175);
-    height: 80%;
-    width: 80%;
+    background-image: url('./imgs/poker_table.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,6 +44,11 @@ body{
 #heading{
     font-family: 'New Amsterdam', monospace;
     font-size: 42px;
+    color: whitesmoke;
+}
+
+#movesHeading{
+    color: whitesmoke;
 }
 
 #reset_button{
@@ -57,16 +64,16 @@ body{
 
 .item{
     position: relative;
-    background-color: slategray;
+    background-color:ghostwhite;
     font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: 2px solid black;
+    border-radius: 10px;
     padding: 10px;
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 66px;
     transform: rotateY(180deg);
     transition: 0.3s;
 }
@@ -79,7 +86,11 @@ body{
     content: '';
     position: absolute;
     inset: 0;
-    background: slategray;
+    background-image: url('./imgs/playingcardblue.jpg');
+    border-radius: 10px;
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
     transition: 0.3s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
