@@ -1,7 +1,7 @@
 import './style.css';
 
 const symbols: string[] = ['🏀', '🏀', '🎮', '🎮', '🧩', '🧩', '🀄', '🀄', '🎯', '🎯', '🥊', '🥊', '🎱', '🎱', '🎳', '🎳','🦍','🦍'];
-
+const sym: string[] = ['a', 'a', 'f','f'];
 function fisherYatesShuffle(array: string[]) {
   for (let i = array.length - 1; i > 0; i--){
     const j = Math.floor(Math.random() * (i + 1));
@@ -10,18 +10,21 @@ function fisherYatesShuffle(array: string[]) {
   return array;
 }
 
-const shuffledSymbols: string[] = fisherYatesShuffle(symbols);
+const shuffledSymbols: string[] = fisherYatesShuffle(sym);
 let moves = 0;
-let counter = document.querySelector('#movesCounter') as HTMLElement;
-if (!counter) {
-  throw new Error("Counter was not detected");
+const counter = document.querySelector('#movesCounter') as HTMLElement;
+const cardGrid = document.querySelector('.cardGrid') as HTMLElement;
+const winStatement = document.querySelector('.winStatement') as HTMLElement;
+
+if (!counter || !cardGrid || !winStatement) {
+  throw new Error("Some component was not detected");
 }
 
 for (let i = 0; i < shuffledSymbols.length; i++){
   let box = document.createElement('div');
   box.className = 'item';
   box.innerHTML = shuffledSymbols[i];
-  document.querySelector('.cardGrid')?.appendChild(box);
+  cardGrid.appendChild(box);
   
   box.onclick = function () {
     box.classList.add('boxOpen');
@@ -37,9 +40,10 @@ for (let i = 0; i < shuffledSymbols.length; i++){
         counter.innerText = String(moves);
       }
       if (document.querySelectorAll('.boxMatch').length == shuffledSymbols.length) {
-        alert('You win!')
+        winStatement.style.display = 'block';
+        winStatement.innerText = '♛  Congratulations... You have won!  ♛';
       }
-    },1000)
+    },2000)
   }
 }
 

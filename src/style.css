@@ -19,6 +19,13 @@
   }
   #gameContainer #reset_button {
     font-size: 22px;
+    top: auto;
+    bottom: 10px;
+    right: 40px;
+  }
+  #gameContainer .winStatement {
+    padding-top: 100px;
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 376px) and (max-width: 560px) {
@@ -36,11 +43,30 @@
     font-size: 26px;
     border-radius: 5px;
   }
+  #gameContainer #reset_button {
+    font-size: 22px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+  }
+  #gameContainer .winStatement {
+    padding-top: 100px;
+    font-size: 20px;
+  }
 }
 @media screen and (min-width: 561px) and (max-width: 850px) {
   #gameContainer .cardGrid {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+  }
+  #gameContainer #reset_button {
+    top: auto;
+    bottom: 20px;
+    right: 80px;
+  }
+  #gameContainer .winStatement {
+    padding-top: 100px;
+    font-size: 30px;
   }
 }
 @media screen and (min-width: 1441px) and (max-width: 2560px) {
@@ -135,7 +161,12 @@ body {
   font-family: "New Amsterdam", monospace;
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid whitesmoke;
+  background-color: transparent;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  color: whitesmoke;
 }
 
 #reset_button:hover {
@@ -187,6 +218,13 @@ body {
 
 #movesHeading {
   font-family: "New Amsterdam", monospace;
+}
+
+.winStatement {
+  display: none;
+  padding-top: 120px;
+  color: whitesmoke;
+  font-size: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

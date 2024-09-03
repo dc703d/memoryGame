@@ -1,20 +1,20 @@
-@import './gallery.scss';
-*{
+@import "./gallery.scss";
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
-    background-color:rgb(52, 46, 46);
+    background-color: rgb(52, 46, 46);
 }
 
-#gameContainer{
-    background-image: url('./imgs/poker_table.jpg');
+#gameContainer {
+    background-image: url("./imgs/poker_table.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -28,43 +28,47 @@ body{
     border: 3px solid black;
 }
 
-.cardGrid{
+.cardGrid {
     display: grid;
     width: 100%;
     height: 90%;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 10px;
     padding: 20px;
     transform-style: preserve-3d;
     perspective: 500px;
-    
 }
 
-#heading{
-    font-family: 'New Amsterdam', monospace;
+#heading {
+    font-family: "New Amsterdam", monospace;
     font-size: 42px;
     color: whitesmoke;
 }
 
-#movesHeading{
+#movesHeading {
     color: whitesmoke;
 }
 
-#reset_button{
+#reset_button {
     font-size: 28px;
-    font-family: 'New Amsterdam', monospace;
+    font-family: "New Amsterdam", monospace;
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid whitesmoke;
+    background-color: transparent;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    color: whitesmoke;
 }
-#reset_button:hover{
+#reset_button:hover {
     transform: scale(1.02);
 }
 
-.item{
+.item {
     position: relative;
-    background-color:ghostwhite;
+    background-color: ghostwhite;
     font-size: 40px;
     display: flex;
     justify-content: center;
@@ -78,15 +82,15 @@ body{
     transition: 0.3s;
 }
 
-.item.boxOpen{
+.item.boxOpen {
     transform: rotateY(0deg);
 }
 
-.item::after{
-    content: '';
+.item::after {
+    content: "";
     position: absolute;
     inset: 0;
-    background-image: url('./imgs/playingcardblue.jpg');
+    background-image: url("./imgs/playingcardblue.jpg");
     border-radius: 10px;
     background-size: contain;
     justify-content: center;
@@ -96,15 +100,22 @@ body{
     backface-visibility: hidden;
 }
 
-.boxOpen::after{
+.boxOpen::after {
     transform: rotateY(180deg);
 }
 
-.boxMatch{
+.boxMatch {
     opacity: 0;
     pointer-events: none;
 }
 
-#movesHeading{
-    font-family: 'New Amsterdam', monospace;
+#movesHeading {
+    font-family: "New Amsterdam", monospace;
+}
+
+.winStatement {
+    display: none;
+    padding-top: 120px;
+    color: whitesmoke;
+    font-size: 50px;
 }

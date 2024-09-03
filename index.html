@@ -12,12 +12,14 @@
   <body>
     <div id="gameContainer">
       <h2 id="heading">MEMORY GAME</h2>
+      <button id="reset_button" onclick="window.location.reload()">Reset Game</button>
       <div id="movesCounterContainer">
         <h2 id="movesHeading">Total Moves: <span id="movesCounter">0</span></h2>
       </div>
+      <div class="winStatement">
+      </div>
       <div class="cardGrid">
       </div>
-      <button id="reset_button" onclick="window.location.reload()">Reset Game</button>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

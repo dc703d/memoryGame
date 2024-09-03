@@ -1,93 +1,115 @@
-@use './devices.scss';
-@use './media.scss';
+@use "./devices.scss";
+@use "./media.scss";
 
-
-#gameContainer{
-
-    @include media.small-phone{
+#gameContainer {
+    @include media.small-phone {
         gap: 0px;
         max-height: 100vh;
         max-width: 100vw;
-        .cardGrid{
-            grid-template-columns: repeat(4,1fr);
-            grid-template-rows: repeat(5,1fr);
-            
+        .cardGrid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
         }
-        .item{
+        .item {
             width: 20px;
             height: 35px;
             border-radius: 5px;
             font-size: 22px;
         }
-        #heading{
+        #heading {
             font-size: 32px;
         }
-        #reset_button{
+        #reset_button {
             font-size: 22px;
+            top: auto;
+            bottom: 10px;
+            right: 40px;
+        }
+        .winStatement {
+            padding-top: 100px;
+            font-size: 18px;
         }
     }
 
-    @include media.med-phone{
+    @include media.med-phone {
         max-height: 100vh;
         max-width: 100vw;
-        .cardGrid{
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(6,1fr);
+        .cardGrid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(6, 1fr);
         }
-        .item{
+        .item {
             width: 36px;
             height: 58px;
             font-size: 26px;
             border-radius: 5px;
-        }  
+        }
+        #reset_button {
+            font-size: 22px;
+            position: relative;
+            top: 0px;
+            right: 0px;
+        }
+        .winStatement {
+            padding-top: 100px;
+            font-size: 20px;
+        }
     }
 
-    @include media.large-phone{
-        .cardGrid{
-            grid-template-columns: repeat(4,1fr);
-            grid-template-rows: repeat(4,1fr);
+    @include media.large-phone {
+        .cardGrid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
         }
-        .item{
+        .item {
             // width: 70px;
             // height: 70px;
         }
-        
+        #reset_button {
+            top: auto;
+            bottom: 20px;
+            right: 80px;
+        }
+        .winStatement {
+            padding-top: 100px;
+            font-size: 30px;
+        }
     }
 
-    @include media.desktop{
-        #heading{
+    @include media.desktop {
+        #heading {
             font-size: 70px;
         }
-        #movesHeading{
+        #movesHeading {
             font-size: 40px;
         }
-        #reset_button{
+        #reset_button {
             font-size: 40px;
         }
         .cardGrid {
             width: 100%;
         }
-        .item{
+        .item {
             width: 88px;
             height: 130px;
             font-size: 50px;
-        }  
+        }
     }
 
-    @include media.large-screen{
-        #heading{
+    @include media.large-screen {
+        #heading {
             font-size: 80px;
         }
-        #movesHeading{
+        #movesHeading {
             font-size: 50px;
         }
-        #reset_button{
+        #reset_button {
             font-size: 50px;
         }
-        .item{
+        .item {
             width: 120px;
             height: 120px;
             font-size: 60px;
-        }  
+        }
     }
 }
