@@ -146,34 +146,6 @@ body {
   perspective: 500px;
 }
 
-#heading {
-  font-family: "New Amsterdam", monospace;
-  font-size: 42px;
-  color: whitesmoke;
-}
-
-#movesHeading {
-  color: whitesmoke;
-}
-
-#reset_button {
-  font-size: 28px;
-  font-family: "New Amsterdam", monospace;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid whitesmoke;
-  background-color: transparent;
-  justify-self: center;
-  position: absolute;
-  top: 50px;
-  right: 100px;
-  color: whitesmoke;
-}
-
-#reset_button:hover {
-  transform: scale(1.02);
-}
-
 .item {
   position: relative;
   background-color: ghostwhite;
@@ -221,11 +193,120 @@ body {
   font-family: "New Amsterdam", monospace;
 }
 
-.winStatement {
+.startUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(152, 7, 7);
+  padding: 30px;
+  border-radius: 10px;
+  line-height: 250%;
+  box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.startUp li {
+  list-style-type: none;
+}
+.startUp__heading {
+  font-family: "New Amsterdam", monospace;
+  font-size: 42px;
+  color: whitesmoke;
+  padding-bottom: 20px;
+}
+.startUp__Text {
+  font-family: "New Amsterdam", monospace;
+  font-size: 16px;
+  color: whitesmoke;
+  padding-left: 60px;
+}
+.startUp__subheadings {
+  font-family: "New Amsterdam", monospace;
+  font-size: 22px;
+  color: whitesmoke;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  text-decoration: underline;
+}
+.startUp__button {
+  font-size: 28px;
+  font-family: "New Amsterdam", monospace;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  background-color: transparent;
+  color: whitesmoke;
+  margin-top: 30px;
+}
+.startUp__button:hover {
+  transform: scale(1.02);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.topBar__heading {
+  font-family: "New Amsterdam", monospace;
+  font-size: 42px;
+  color: whitesmoke;
   display: none;
-  padding-top: 120px;
+}
+.topBar__movesHeading {
+  font-family: "New Amsterdam", monospace;
+  color: whitesmoke;
+  display: none;
+}
+.topBar__timerHeading {
+  font-family: "New Amsterdam", monospace;
+  color: whitesmoke;
+  display: none;
+}
+.topBar__topScoreContainer {
+  font-family: "New Amsterdam", monospace;
+  color: whitesmoke;
+  display: none;
+}
+
+.winContainer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(152, 7, 7);
+  padding: 30px;
+  border-radius: 10px;
+  line-height: 250%;
+  box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 220px;
+}
+.winContainer__winStatement {
+  display: none;
+  padding-top: 20px;
   color: whitesmoke;
   font-size: 50px;
+  margin: 20px;
+}
+.winContainer__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.winContainer__buttons--return, .winContainer__buttons--reset {
+  font-size: 28px;
+  font-family: "New Amsterdam", monospace;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  background-color: transparent;
+  color: whitesmoke;
+  margin: 40px;
+}
+.winContainer__buttons--return:hover, .winContainer__buttons--reset:hover {
+  transform: scale(1.02);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,31 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/imgs/playingcardblue.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Matching Game</title>
-  </head>
-  <body>
-    <div id="gameContainer">
-      <!-- <div id="topScoreContainer">
-        <h2 id="topScoreHeading">Best Score: <span id="topScoreCounter">100</span></h2>
-      </div> -->
-      <h2 id="heading">MEMORY GAME</h2>
-      <button id="reset_button" onclick="window.location.reload()">Reset Game</button>
-      <div id="movesCounterContainer">
-        <h2 id="movesHeading">Total Moves: <span id="movesCounter">0</span></h2>
-      </div>
-      <div class="winStatement">
-        <!-- <p>♛  Congratulations... You have won!  ♛</p> -->
-        <!-- <button id="reset_button" >Reset Game</button> -->
-      </div>
-      <div class="cardGrid">
-      </div>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="src/imgs/playingcardblue.jpg"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Memory Matching Game</title>
+    </head>
+    <body>
+        <div id="gameContainer">
+            <div class="startUp">
+                <h2 class="startUp__heading">MATCH MASTER</h2>
+                <ul>
+                    <li>
+                        <h3 class="startUp__subheadings">Starting the Game:</h3>
+                        <p class="startUp__Text">
+                            When the game begins, all cards will be displayed
+                            face down on the screen. Your goal is to find all
+                            the matching pairs of cards.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="startUp__subheadings">How to Play:</h3>
+                        <p class="startUp__Text">
+                            Click to flip two cards. If they match, they stay
+                            face-up; if not, they flip back over. Keep flipping
+                            cards until all pairs are matched.
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="startUp__subheadings">Winning the Game:</h3>
+                        <p class="startUp__Text">
+                            The game is complete when all card pairs have been
+                            successfully matched. Challenge yourself to complete
+                            the game in the fewest number of moves possible!
+                        </p>
+                    </li>
+                    <li>
+                        <h3 class="startUp__subheadings">Playing Again?</h3>
+                        <p class="startUp__Text">
+                            Click Reset to shuffle and start a new game or click
+                            Return to Menu to exit to the main menu.
+                        </p>
+                    </li>
+                </ul>
+
+                <button class="startUp__button">Start Game</button>
+            </div>
+            <div class="topBar">
+                <div class="topBar__topScoreContainer">
+                    <h2 class="topBar__topScoreHeading">
+                        Fewest Moves:
+                        <span class="topBar__topScoreCounter">__</span>
+                    </h2>
+                    <h2 class="topBar__quickestTimeHeading">
+                        Quickest Time:
+                        <span class="topBar__quickestTime">__</span>
+                    </h2>
+                </div>
+                <h2 class="topBar__heading">MATCH MASTER</h2>
+                <div class="topBar__timerAndMoves">
+                    <h2 class="topBar__movesHeading">
+                        Total Moves: <span class="topBar__Counter">0</span>
+                    </h2>
+                    <h2 class="topBar__timerHeading">
+                        Timer: <span class="topBar__timerCounter">0.00</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="winContainer">
+                <p class="winContainer__winStatement">
+                    ♛ Congratulations... You have won! ♛
+                </p>
+                <div class="winContainer__buttons">
+                    <button class="winContainer__buttons--return">
+                        Return to Menu
+                    </button>
+                    <button class="winContainer__buttons--reset">
+                        Reset Game
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
 </html>
