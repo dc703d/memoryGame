@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="src/imgs/playingcardblue.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
@@ -11,6 +11,9 @@
   </head>
   <body>
     <div id="gameContainer">
+      <div id="topScoreContainer">
+        <h2 id="topScoreHeading">Best Score: <span id="topScoreCounter">100</span></h2>
+      </div>
       <h2 id="heading">MEMORY GAME</h2>
       <button id="reset_button" onclick="window.location.reload()">Reset Game</button>
       <div id="movesCounterContainer">
