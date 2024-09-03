@@ -22,6 +22,7 @@ const symbols: string[] = [
 ];
 const sym = ["a", "a", "b", "b"];
 let moves = 0;
+let timerStopped: boolean = true;
 const counter = document.querySelector(".topBar__Counter") as HTMLElement;
 const cardGrid = document.createElement("div");
 cardGrid.className = "cardGrid";
@@ -56,6 +57,13 @@ const quickestTime = document.querySelector(
 const topScoreContainer = document.querySelector(
     ".topBar__topScoreContainer"
 ) as HTMLElement;
+const topScoreHeading = document.querySelector(
+    ".topBar__topScoreHeading"
+) as HTMLElement;
+const quickestTimeHeading = document.querySelector(
+    ".topBar__quickestTimeHeading"
+) as HTMLElement;
+const timer = document.querySelector(".topBar__timerCounter") as HTMLElement;
 
 if (
     !counter ||
@@ -87,6 +95,10 @@ const populateGrid = (shuffledSymbols: string[]) => {
         cardGrid.appendChild(box);
 
         box.onclick = function () {
+            if (timerStopped) {
+                startTimer();
+                timerStopped = false;
+            }
             box.classList.add("boxOpen");
             setTimeout(function () {
                 if (document.querySelectorAll(".boxOpen").length > 1) {
@@ -120,13 +132,24 @@ const allCardsMatched = () => {
     if (
         document.querySelectorAll(".boxMatch").length == shuffledSymbols.length
     ) {
+        stopTimer();
+        timerStopped = true;
         winContainer.style.display = "flex";
         winStatement.style.display = "block";
         resetButton.style.display = "block";
         returnButton.style.display = "block";
         winStatement.innerText = "♛  Congratulations... You have won!  ♛";
-        if (moves < Number(fewestMoves.innerText)) {
+        if (
+            fewestMoves.innerText == "__" ||
+            moves < Number(fewestMoves.innerText)
+        ) {
             fewestMoves.innerText = String(moves);
+        }
+        if (
+            quickestTime.innerText == "__" ||
+            timer.innerText < quickestTime.innerText
+        ) {
+            quickestTime.innerText = timer.innerText;
         }
     }
 };
@@ -141,13 +164,15 @@ startButton.onclick = () => {
     populateGrid(shuffledSymbols);
     mainHeading.style.display = "block";
     timerHeading.style.display = "block";
-    topScoreContainer.style.display = "block";
+    topScoreHeading.style.display = "block";
+    quickestTimeHeading.style.display = "block";
 };
 
 resetButton.onclick = () => {
     for (let i = 0; i < shuffledSymbols.length; i++) {
         cardGrid.innerHTML = "";
     }
+    resetTimer();
     populateGrid(shuffledSymbols);
     moves = 0;
     counter.innerText = String(moves);
@@ -163,6 +188,8 @@ returnButton.onclick = () => {
         cardGrid.innerHTML = "";
     }
     moves = 0;
+    quickestTime.innerText = "__";
+    fewestMoves.innerText = "__";
     counter.innerText = String(moves);
     startButton.style.display = "block";
     movesHeading.style.display = "none";
@@ -174,4 +201,28 @@ returnButton.onclick = () => {
     resetButton.style.display = "none";
     returnButton.style.display = "none";
     winStatement.innerText = "none";
+    topScoreHeading.style.display = "none";
+    quickestTimeHeading.style.display = "none";
 };
+
+let startTime: number, timerInterval: number;
+
+function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 10); // Update every 10ms for better precision
+}
+
+function updateTimer() {
+    const elapsedTime = Date.now() - startTime;
+    const seconds = (elapsedTime / 1000).toFixed(3);
+    timer.textContent = seconds;
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    timer.textContent = "0.000";
+}
