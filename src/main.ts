@@ -70,11 +70,13 @@ if (
     !gameContainer ||
     !movesHeading ||
     !timerHeading ||
-    !winContainer
+    !winContainer ||
+    !timer
 ) {
     throw new Error("Some component was not detected");
 }
-
+/*The fisherYatesShuffle function will take an array such as out symbols array above and 
+return a shuffled array. It does this by swapping random value indexes in the array*/
 function fisherYatesShuffle(array: string[]) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -82,7 +84,6 @@ function fisherYatesShuffle(array: string[]) {
     }
     return array;
 }
-// let shuffledSymbols: string[] = fisherYatesShuffle(symbols);
 
 const populateGrid = (symbols: string[]) => {
     let shuffledSymbols: string[] = fisherYatesShuffle(symbols);
@@ -127,6 +128,9 @@ const populateGrid = (symbols: string[]) => {
     }
 };
 
+/* Function called to check if all the cards have been matched. It does this by checking if every card has
+the class '.boxMatch' and if they do the display properties for the game are altered and the win screen is brought up.
+The function also checks to see if the highscores have been broken and updates these as needed.*/
 const allCardsMatched = () => {
     if (document.querySelectorAll(".boxMatch").length == symbols.length) {
         stopTimer();
@@ -152,6 +156,7 @@ const allCardsMatched = () => {
 };
 
 startButton.onclick = () => {
+    //start button function, initializes the game container and removes the start screen by editing display properties
     for (let i = 0; i < symbols.length; i++) {
         cardGrid.innerHTML = "";
     }
@@ -166,6 +171,7 @@ startButton.onclick = () => {
 };
 
 resetButton.onclick = () => {
+    //reset button function, alters the display properties of seperate containers
     for (let i = 0; i < symbols.length; i++) {
         cardGrid.innerHTML = "";
     }
@@ -181,10 +187,12 @@ resetButton.onclick = () => {
 };
 
 returnButton.onclick = () => {
+    //return button function, alters the display properties of seperate containers
     for (let i = 0; i < symbols.length; i++) {
         cardGrid.innerHTML = "";
     }
     moves = 0;
+    resetTimer();
     quickestTime.innerText = "__";
     fewestMoves.innerText = "__";
     counter.innerText = String(moves);
@@ -202,6 +210,7 @@ returnButton.onclick = () => {
     quickestTimeHeading.style.display = "none";
 };
 
+//below are functions to control the timer
 function startTimer() {
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 10); // Update every 10ms for better precision
