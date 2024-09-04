@@ -5,14 +5,14 @@
     @include media.small-phone {
         .topBar {
             &__heading {
-                font-size: 30px;
+                font-size: 26px;
             }
             &__timerAndMoves {
-                font-size: 9px;
+                font-size: 8px;
                 padding: 10px;
             }
             &__topScoreContainer {
-                font-size: 9px;
+                font-size: 8px;
             }
         }
         .startUp {
@@ -64,14 +64,14 @@
     @include media.med-phone {
         .topBar {
             &__heading {
-                font-size: 30px;
+                font-size: 26px;
             }
             &__timerAndMoves {
-                font-size: 9px;
+                font-size: 8px;
                 padding: 10px;
             }
             &__topScoreContainer {
-                font-size: 9px;
+                font-size: 8px;
             }
         }
         .startUp {
