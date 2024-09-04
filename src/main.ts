@@ -82,9 +82,10 @@ function fisherYatesShuffle(array: string[]) {
     }
     return array;
 }
-const shuffledSymbols: string[] = fisherYatesShuffle(symbols);
+// let shuffledSymbols: string[] = fisherYatesShuffle(symbols);
 
-const populateGrid = (shuffledSymbols: string[]) => {
+const populateGrid = (symbols: string[]) => {
+    let shuffledSymbols: string[] = fisherYatesShuffle(symbols);
     gameContainer.appendChild(cardGrid);
     for (let i = 0; i < shuffledSymbols.length; i++) {
         let box = document.createElement("div");
@@ -127,9 +128,7 @@ const populateGrid = (shuffledSymbols: string[]) => {
 };
 
 const allCardsMatched = () => {
-    if (
-        document.querySelectorAll(".boxMatch").length == shuffledSymbols.length
-    ) {
+    if (document.querySelectorAll(".boxMatch").length == symbols.length) {
         stopTimer();
         timerStopped = true;
         winContainer.style.display = "flex";
@@ -153,13 +152,13 @@ const allCardsMatched = () => {
 };
 
 startButton.onclick = () => {
-    for (let i = 0; i < shuffledSymbols.length; i++) {
+    for (let i = 0; i < symbols.length; i++) {
         cardGrid.innerHTML = "";
     }
     startButton.style.display = "none";
     movesHeading.style.display = "block";
     startUpCard.style.display = "none";
-    populateGrid(shuffledSymbols);
+    populateGrid(symbols);
     mainHeading.style.display = "block";
     timerHeading.style.display = "block";
     topScoreHeading.style.display = "block";
@@ -167,11 +166,11 @@ startButton.onclick = () => {
 };
 
 resetButton.onclick = () => {
-    for (let i = 0; i < shuffledSymbols.length; i++) {
+    for (let i = 0; i < symbols.length; i++) {
         cardGrid.innerHTML = "";
     }
     resetTimer();
-    populateGrid(shuffledSymbols);
+    populateGrid(symbols);
     moves = 0;
     counter.innerText = String(moves);
     winContainer.style.display = "none";
@@ -182,7 +181,7 @@ resetButton.onclick = () => {
 };
 
 returnButton.onclick = () => {
-    for (let i = 0; i < shuffledSymbols.length; i++) {
+    for (let i = 0; i < symbols.length; i++) {
         cardGrid.innerHTML = "";
     }
     moves = 0;
