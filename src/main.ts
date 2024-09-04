@@ -20,9 +20,10 @@ const symbols: string[] = [
     "🦍",
     "🦍",
 ];
-const sym = ["a", "a", "b", "b"];
+//const sym = ["a", "a", "b", "b"]; //only used for debugging purposes
 let moves = 0;
 let timerStopped: boolean = true;
+let startTime: number, timerInterval: number;
 const counter = document.querySelector(".topBar__Counter") as HTMLElement;
 const cardGrid = document.createElement("div");
 cardGrid.className = "cardGrid";
@@ -54,9 +55,6 @@ const winContainer = document.querySelector(".winContainer") as HTMLElement;
 const quickestTime = document.querySelector(
     ".topBar__quickestTime"
 ) as HTMLElement;
-const topScoreContainer = document.querySelector(
-    ".topBar__topScoreContainer"
-) as HTMLElement;
 const topScoreHeading = document.querySelector(
     ".topBar__topScoreHeading"
 ) as HTMLElement;
@@ -84,7 +82,7 @@ function fisherYatesShuffle(array: string[]) {
     }
     return array;
 }
-const shuffledSymbols: string[] = fisherYatesShuffle(sym);
+const shuffledSymbols: string[] = fisherYatesShuffle(symbols);
 
 const populateGrid = (shuffledSymbols: string[]) => {
     gameContainer.appendChild(cardGrid);
@@ -204,8 +202,6 @@ returnButton.onclick = () => {
     topScoreHeading.style.display = "none";
     quickestTimeHeading.style.display = "none";
 };
-
-let startTime: number, timerInterval: number;
 
 function startTimer() {
     startTime = Date.now();
